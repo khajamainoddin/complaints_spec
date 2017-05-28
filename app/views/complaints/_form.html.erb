@@ -1,0 +1,36 @@
+<%= form_for(@complaint) do |f| %>
+
+
+<% if @complaint.errors.any? %>
+<div id="error_explanation">
+<h2><%= pluralize(@complaint.errors.count, "error") %>
+prohibited this complaint from being saved:</h2>
+<ul>
+<% @complaint.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+</div>
+<% end %>
+
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :section %>
+		<%= f.text_field :section %>
+
+	</p>
+
+	<p>
+		<%= f.label :problem %>
+		<%= f.text_field :problem %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+	<% end %>

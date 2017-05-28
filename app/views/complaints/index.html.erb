@@ -1,0 +1,11 @@
+<%= link_to "New Complaint", new_complaint_path %>
+
+<h2>Complaints</h2>
+
+<ul>
+	<% @complaints.each do |complaint| %>
+
+	<li><%= link_to complaint.name, complaint %></li>
+
+	<% end %>
+</ul>
